@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int main1()
+int main5_1_1()
 {
 	int x = 2, y, z;
 	x *= (y = z = 5);//2*5=10
@@ -22,7 +22,7 @@ int main1()
 	return 0;//10.10.0.1.1.1
 }
 int Vac = 3;
-int main2()
+int main5_1_2()
 {
 	int Vac = 10;
 	::Vac++;
@@ -30,7 +30,7 @@ int main2()
 	cout << Vac << endl;
 	return 0;
 }
-void main3_1()
+void main5_2_1_1()
 {
 	int a, x;
 	for (a = 0, x = 0; a <= 1 && !x++; a++)
@@ -39,7 +39,7 @@ void main3_1()
 	}
 	cout << a << x << endl;//2.1
 }
-void main3_2()
+void main5_2_1_2()
 {
 	int a, x;
 	for (a = 0, x = 0; a <= 1 && !x++;)
@@ -48,3 +48,18 @@ void main3_2()
 	}
 	cout << a << x << endl;//1.2
 }
+void main5_2_2()
+{
+	int b = 3;
+	int arr[] = { 6,7,8,9,10 };
+	int *ptr = arr;
+	*(ptr++) += 123;//不是*(ptr++)=*(ptr++)+123;而是*ptr=*ptr+123;ptr++;<>"<>"为重点
+	printf("%d,%d\n", *ptr, *(++ptr));//printf从右到左压栈，先算*(++ptr),再算*ptr，其实是一个数，必然输出相等
+}
+//int main5_2_1()
+//{
+//	int a = 1;
+//	a++ += 1;
+//	cout << a << endl;
+//	return 0;
+//}
