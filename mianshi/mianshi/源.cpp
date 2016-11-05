@@ -1,4 +1,8 @@
 #include <iostream>
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+
 using namespace std;
 int main5_1_1()
 {
@@ -63,3 +67,60 @@ void main5_2_2()
 //	cout << a << endl;
 //	return 0;
 //}
+int main5_3()
+{
+	int a = 0;
+	if ('A' == a) //可第一时间找到错误，因为常亮不能作为左值
+	{
+		a++;
+	}
+	if (a == 'A')
+	{
+		a++;
+	}
+	int i, X = 0, Y = 0, J = 0, S = 0;
+	for (i = 0; i < 8; i++)
+	{
+		X = i + Y + J * 7;
+		printf("%d", X);
+	}
+	{
+		S = Y + J * 7;//最好把与循环无关的量在循环外求出
+		for (i = 0; i < 8; i++)
+		{
+			printf("%d", i + S);
+		}
+	}
+	return 9;
+}
+int main5_4_1()
+{
+	unsigned char a = 0xA5;
+	unsigned char b = ~a >> 4;//>>优先级更高，先右移4位，再取反
+	//cout << b;
+	printf("b=%d\n", a);
+	return 0;
+}
+int main5_4_2()
+{
+	float a = 1.0f;
+	cout << int(a) << endl;//1
+	cout << &a << endl;//a的地址
+	cout << (int&)a << endl;
+	cout << boolalpha << ((int)a == (int&)a) << endl;
+	float b = 0.0f;
+	cout << (int&)b << endl;
+	cout << &b << endl;
+	cout << (int&)b << endl;
+	cout << boolalpha << ((int)b == (int&)b) << endl;
+	return 0;
+
+}
+int main5_4_3()
+{
+
+}
+int main5_4_3()
+{
+
+}
